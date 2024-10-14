@@ -1,0 +1,21 @@
+static IEnumerable<string> Personas()
+{
+    yield return "Francisco";
+    yield return "Misael";
+    yield return "Jesus";
+    yield return "Pedro";
+    yield return "Pablo";
+    yield return "Javier";
+}
+
+//Query syntax
+/* var personas = (from p in Personas()
+                select p); */
+
+//Syntax method
+var personas = Personas().Select(p => p);
+
+foreach (var p in personas)
+{
+    System.Console.WriteLine(p);
+}
