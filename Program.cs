@@ -1,3 +1,5 @@
 ﻿using LINQ_Con_Cs;
 
-FuncionesLinq.GroupByMultipleKeySyntaxMethod();
+FuncionesLinq.OrderByAscendingSyntaxMethod();
+System.Console.WriteLine("\n");
+FuncionesLinq.OrderByDescendingSyntaxMethod();
