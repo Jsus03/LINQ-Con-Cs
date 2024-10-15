@@ -1,4 +1,4 @@
-﻿using LINQ_Con_Cs;
+using LINQ_Con_Cs;
 
 static IEnumerable<string> Personas()
 {
