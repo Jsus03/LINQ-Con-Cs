@@ -1,4 +1,4 @@
-﻿static IEnumerable<string> Names()
+static IEnumerable<string> Names()
 {
     yield return "Francisco";
     yield return "Misael";
@@ -48,6 +48,3 @@ foreach (var persona in personasApellido)
 var numeros0 = numeros1.Union(numeros2);;
 
 foreach (var num in numeros0)
-{
-    System.Console.WriteLine(num);
-}
