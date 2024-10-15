@@ -27,3 +27,4 @@ C:\Users\jesus\OneDrive\Documentos\Universidad\Practica\Cursos\LINQ-Con-Cs\LINQ-
 C:\Users\jesus\OneDrive\Documentos\Universidad\Practica\Cursos\LINQ-Con-Cs\LINQ-Con-Cs\obj\Debug\net8.0\LINQ-Con-Cs.pdb
 C:\Users\jesus\OneDrive\Documentos\Universidad\Practica\Cursos\LINQ-Con-Cs\LINQ-Con-Cs\obj\Debug\net8.0\LINQ-Con-Cs.genruntimeconfig.cache
 C:\Users\jesus\OneDrive\Documentos\Universidad\Practica\Cursos\LINQ-Con-Cs\LINQ-Con-Cs\obj\Debug\net8.0\ref\LINQ-Con-Cs.dll
+C:\Users\PC\Documents\Cursos\LINQ-Con-Cs\LINQ-Con-Cs\obj\Debug\net8.0\LINQ-Con-Cs.sourcelink.json
