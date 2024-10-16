@@ -9,7 +9,7 @@ public static class FuncionesLinq
         
         foreach (var person in personasApellido)
         {
-            System.Console.WriteLine($"{person}");
+            Console.WriteLine($"{person}");
         }
     }
 
@@ -42,7 +42,7 @@ public static class FuncionesLinq
         
         foreach (var producto in productos)
         {
-            System.Console.WriteLine($"{producto.Id} {producto.Nombre} {producto.Nombre_categoria}");
+            Console.WriteLine($"{producto.Id} {producto.Nombre} {producto.Nombre_categoria}");
         }
     }
 
@@ -62,7 +62,7 @@ public static class FuncionesLinq
 
         foreach (var producto in productos)
         {
-            System.Console.WriteLine($"{producto.Id} {producto.Nombre} {producto.Nombre_categoria}");
+            Console.WriteLine($"{producto.Id} {producto.Nombre} {producto.Nombre_categoria}");
         }
     }
 
@@ -82,7 +82,7 @@ public static class FuncionesLinq
         
         foreach (var empleado in empleados)
         {
-            System.Console.WriteLine($"{empleado.Id} {empleado.Nombre} {empleado.Nombre_departamento} {empleado.Nombre_direccion}");
+            Console.WriteLine($"{empleado.Id} {empleado.Nombre} {empleado.Nombre_departamento} {empleado.Nombre_direccion}");
         }
     }
 
@@ -113,7 +113,7 @@ public static class FuncionesLinq
 
         foreach (var empleado in empleados)
         {
-            System.Console.WriteLine($"{empleado.Id} {empleado.Nombre} {empleado.Nombre_Departamento} {empleado.Nombre_Direccion}");
+            Console.WriteLine($"{empleado.Id} {empleado.Nombre} {empleado.Nombre_Departamento} {empleado.Nombre_Direccion}");
         }
     }
 
@@ -123,11 +123,11 @@ public static class FuncionesLinq
 
         foreach (var groupProductos in productoCategoria)
         {
-            System.Console.WriteLine($"Categoria: {groupProductos.Key}");
+            Console.WriteLine($"Categoria: {groupProductos.Key}");
 
             foreach (var producto in groupProductos)
             {
-                System.Console.WriteLine($"Id: {producto.Id} Nombre: {producto.Nombre} Precio {producto.Precio}");
+                Console.WriteLine($"Id: {producto.Id} Nombre: {producto.Nombre} Precio {producto.Precio}");
             }
         }
     }   
@@ -142,11 +142,11 @@ public static class FuncionesLinq
         
         foreach (var groupEmpleado in empleadosDepartamentoDireccion)
         {
-            System.Console.WriteLine($"Departamento: {groupEmpleado.Key.IdDepartamento} Direccion: {groupEmpleado.Key.IdDireccion}");
+            Console.WriteLine($"Departamento: {groupEmpleado.Key.IdDepartamento} Direccion: {groupEmpleado.Key.IdDireccion}");
 
             foreach (var empleado in groupEmpleado.Select(e => e))
             {
-                System.Console.WriteLine($"Id: {empleado.Id} Nombre: {empleado.Nombre}");
+                Console.WriteLine($"Id: {empleado.Id} Nombre: {empleado.Nombre}");
             }
         }
     }
@@ -157,7 +157,7 @@ public static class FuncionesLinq
 
         foreach (var producto in productos)
         {
-            System.Console.WriteLine($"Id: {producto.Id} Nombre: {producto.Nombre} Precio: {producto.Precio}");
+            Console.WriteLine($"Id: {producto.Id} Nombre: {producto.Nombre} Precio: {producto.Precio}");
         }
     }
 
@@ -167,7 +167,7 @@ public static class FuncionesLinq
 
         foreach (var empleado in empleados)
         {
-            System.Console.WriteLine($"Id: {empleado.Id} Nombre: {empleado.Nombre}");
+            Console.WriteLine($"Id: {empleado.Id} Nombre: {empleado.Nombre}");
         }
     }
 
@@ -176,7 +176,7 @@ public static class FuncionesLinq
         var total = Datos.GetProductos().Where(p => p.Id < 3).
                         Sum(p => p.Precio);
 
-        System.Console.WriteLine($"El total de los productos es: {total}");
+        Console.WriteLine($"El total de los productos es: {total}");
     }
 
     public static void MaxSyntaxMethod()
@@ -185,14 +185,14 @@ public static class FuncionesLinq
 
         var maxCategoria = Datos.GetCategorias().Max(c => c.Id);
 
-        System.Console.WriteLine($"El precio mas alto por debajo de 270: {max}");
+        Console.WriteLine($"El precio mas alto por debajo de 270: {max}");
     }
 
     public static void MinSyntaxMethod()
     {
         int[] enteros = new int[]{1,22,85,74,45,215,875,52,4,-9,-485,1};
         var min_enteros = enteros.Min();
-        System.Console.WriteLine(min_enteros);
+        Console.WriteLine(min_enteros);
         
         var min = Datos.GetProductos().Where(p => p.Precio > 27).Min(p => p.Precio);
     }
@@ -201,24 +201,33 @@ public static class FuncionesLinq
     {
         var max = Datos.GetProductos().Where(p => p.Precio < 270).MaxBy(p => p.Precio);
 
-        System.Console.WriteLine($"Nombre: {max.Nombre} Descripcion: {max.Descripcion} IdCategoria: {max.IdCategoria} Precio: {max.Precio}");
+        Console.WriteLine($"Nombre: {max.Nombre} Descripcion: {max.Descripcion} IdCategoria: {max.IdCategoria} Precio: {max.Precio}");
     }
 
     public static void MinBySyntaxMethod()
     {
         var min = Datos.GetProductos().MinBy(p => p.Precio);
 
-        System.Console.WriteLine($"Nombre: {min.Nombre} Descripcion: {min.Descripcion} IdCategoria: {min.IdCategoria} Precio: {min.Precio}");
+        Console.WriteLine($"Nombre: {min.Nombre} Descripcion: {min.Descripcion} IdCategoria: {min.IdCategoria} Precio: {min.Precio}");
     }
 
     public static void AverageSyntaxMethod()
     {
         int[] enteros = [1,2,3,4,5,6,7,8,9,10];
-
         var average = enteros.Average();
 
         var average2 = Datos.GetProductos().Average(p => p.Precio);
 
-        System.Console.WriteLine(average2);
+        Console.WriteLine(average2);
+    }
+
+    public static void CountSyntaxMethod()
+    {
+        int[] enteros = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        var count = enteros.Count(e => e % 3 != 0);
+
+        var count2 = Datos.GetProductos().Count(p => p.Precio > 50);
+
+        Console.WriteLine(count);
     }
 }
